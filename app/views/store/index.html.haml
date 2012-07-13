@@ -2,12 +2,13 @@
   %p#notice
     = notice
 %h1 Your Pragmatic Catalog
-- products.each do |product|
+- @products.each do |product|
   %div{class: "entry"}
     = image_tag(product.image_url)
     %h3
       = product.title
     = sanitize(product.description)
     %div{class: "price.line"}
-      %span.price= product price
+      %span.price
+        = product.price
 
